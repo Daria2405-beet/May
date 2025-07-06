@@ -1,5 +1,3 @@
-print('Hello, World')
-
 import random
 from math import gcd
 def generate_prime_candidate(length):
@@ -101,3 +99,6 @@ if __name__ == "__main__":
     decrypted_message = decrypt(private_key, encrypted_message)
     
     print(f"\nРасшифрованное сообщение: {decrypted_message}")
+
+
+    print("Конец")
