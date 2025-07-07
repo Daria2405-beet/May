@@ -1,0 +1,27 @@
+import random
+
+def diffie_hellman_key_exchange(p, g):
+    a = random.randint(2, p-2)
+    b = random.randint(2, p-2)
+
+    A = pow(g, a, p)
+    B = pow(g, b, p)
+
+    print(f"Алиса выбирает секрет a={a}")
+    print(f"Боб выбирает секрет b={b}")
+    print(f"Алиса отправляет открытый ключ A={A}")
+    print(f"Боб отправляет открытый ключ B={B}")
+
+    Ka = pow(B, a, p)  # Ключ Алисы
+    Kb = pow(A, b, p)  # Ключ Боба
+
+    print(f"Общий секретный ключ (Алиса): {Ka}")
+    print(f"Общий секретный ключ (Боб): {Kb}")
+
+    return Ka, Kb
+
+if __name__ == "__main__":
+    p = 23  
+    g = 5   
+
+    Ka, Kb = diffie_hellman_key_exchange(p, g)
